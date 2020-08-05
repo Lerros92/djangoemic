@@ -9,7 +9,7 @@ class receiveTable(models.Model):
     note = models.TextField()
 
     def __str__(self):
-        return f"{self.noteNumber}"
+        return f"{self.noteNumber} - {self.customers} - {self.receiveDay}"
 
 class item(models.Model):
     noteNumber = models.ForeignKey(receiveTable, on_delete=models.CASCADE, related_name="item")
@@ -23,4 +23,4 @@ class item(models.Model):
     note = models.TextField()
 
     def __str__(self):
-        return f"{self.noteNumber} - {self.itemName}"
+        return f"{self.itemName} -> {self.noteNumber}"
