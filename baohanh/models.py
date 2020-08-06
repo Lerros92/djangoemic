@@ -21,6 +21,7 @@ class item(models.Model):
     conclude = models.CharField(max_length=128, null=True)
     deadline = models.DateField(null=False, default=(datetime.now() + timedelta(days=2)).date())
     note = models.TextField()
+    done = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.itemName} -> {self.noteNumber}"
