@@ -19,9 +19,10 @@ class item(models.Model):
     status = models.CharField(max_length=128, null=True)
     check = models.CharField(max_length=128, null=True)
     conclude = models.CharField(max_length=128, null=True)
-    deadline = models.DateField(null=False, default=(datetime.now() + timedelta(days=2)).date())
+    deadline = models.DateField()
     note = models.TextField()
-    done = models.BooleanField(default=False)
+    done = models.BooleanField(choices=[(True, "Xong"), (False, "Chưa xong")], default=False)
+    #null=False, default=(datetime.now() + timedelta(days=2)).date()
 
     def __str__(self):
         return f"{self.itemName} -> {self.noteNumber}"
