@@ -42,7 +42,7 @@ def notedetail(request, note_id):
             add_item.save()
             return redirect("baohanh:notedetail", note_id=note_id)
         else:
-            # print(form)
+            print(form)
             return HttpResponse("Form is not valid")
     else:
         try:
